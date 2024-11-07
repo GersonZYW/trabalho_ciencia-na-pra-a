@@ -52,6 +52,7 @@ body {
 }
 .list_option .option a {
     color: #fff; /* Cor branca para todos os links */
+    text-decoration: none;
 }
 
 .header .menu .list_option .option:hover {
@@ -60,36 +61,46 @@ body {
 }
 
 
+/* Estilos para o dropdown */
 .dropdown_gear {
     list-style: none;
     display: none; /* Esconde o dropdown por padrão */
     position: absolute; /* Posiciona o dropdown */
-    background-color: var(--color-neutral-10);
+    background-color: var(--color-neutral-10); /* Cor de fundo */
     min-width: 150px; /* Largura mínima do dropdown */
-    z-index: 1000; /* Garante que fique sobre outros elementos */
-    margin-top: 5px; /* Espaçamento acima do dropdown */
-    border-radius: 5px; /* Borda arredondada */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-    transition: opacity 0.3s ease; /* Transição suave */
+    z-index: 1000; /* Garante que o dropdown fique sobre outros elementos */
+    margin-top: 5px; /* Distância do item pai */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transição suave */
     opacity: 0; /* Inicia invisível */
     right: 0; /* Posiciona o dropdown à esquerda */
+    transform: translateY(10px); /* Leve deslocamento para a animação */
 }
 
+/* Mostrar o dropdown ao passar o mouse sobre o item */
 .list_option .option:hover .dropdown_gear {
-    display: block; /* Mostra o dropdown ao passar o mouse */
+    display: block; /* Torna o dropdown visível */
     opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Animação suave para a posição final */
 }
 
+/* Estilos para os itens dentro do dropdown */
 .dropdown_gear li {
-    padding: 10px; /* Espaçamento interno */
+    padding: 8px 12px; /* Reduzindo o padding para diminuir a altura */
+    white-space: nowrap; /* Evita que o texto quebre em várias linhas */
 }
 
+/* Estilo dos links dentro do dropdown */
 .dropdown_gear li a {
     color: #ffffff; /* Cor do texto */
-    text-decoration: none; /* Remove sublinhado */
+    text-decoration: none; /* Remove o sublinhado */
     display: block; /* Faz o link ocupar toda a área do item */
+    padding: 5px 0; /* Adiciona um pequeno padding apenas vertical */
+    transition: background-color 0.3s ease; /* Transição suave de cor */
 }
 
+/* Efeito de hover nos itens do dropdown */
 .dropdown_gear li:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Fundo ao passar o mouse */
     border-radius: 5px; /* Borda arredondada ao passar o mouse */
@@ -99,29 +110,41 @@ body {
 .dropdown_acessibility {
     list-style: none;
     display: none; /* Esconde o dropdown por padrão */
-    position: absolute; /* Posiciona o dropdown */
-    background-color: var(--color-neutral-10);
-    min-width: 150px; /* Largura mínima do dropdown */
-    z-index: 1001; /* Garante que fique sobre outros elementos */
-    margin-top: 5px; /* Espaçamento acima do dropdown */
+    position: absolute;
+    background-color: var(--color-neutral-10); /* Cor de fundo */
+    min-width: 150px; /* Largura mínima */
+    z-index: 1001; /* Garante que o dropdown fique sobre outros elementos */
+    margin-top: 5px; /* Distância do item pai */
     right: 50%; /* Posiciona à esquerda do item pai */
     margin-left: 10px; /* Espaçamento à esquerda */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transição suave */
+    transform: translateY(10px); /* Leve deslocamento para a animação */
 }
 
 .dropdown_gear li:hover .dropdown_acessibility {
-    display: block; /* Mostra o dropdown ao passar o mouse */
+    display: block; /* Torna o dropdown visível ao passar o mouse */
+    opacity: 1;
+    transform: translateY(0); /* Animação suave para a posição final */
 }
 
+/* Estilo dos itens dentro do dropdown de acessibilidade */
 .dropdown_acessibility li {
-    padding: 10px; /* Espaçamento interno */
+    padding: 8px 12px; /* Reduzindo o padding para diminuir a altura */
 }
 
+/* Estilo dos links dentro do dropdown de acessibilidade */
 .dropdown_acessibility li a {
     color: #ffffff; /* Cor do texto */
-    text-decoration: none; /* Remove sublinhado */
-    display: block; /* Faz o link ocupar toda a área do item */
+    text-decoration: none; /* Remove o sublinhado */
+    display: block;
+    padding: 5px 0; /* Padding vertical pequeno */
+    transition: background-color 0.3s ease; /* Transição suave de cor */
 }
 
+/* Efeito de hover nos itens do dropdown de acessibilidade */
 .dropdown_acessibility li:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Fundo ao passar o mouse */
     border-radius: 5px; /* Borda arredondada ao passar o mouse */
@@ -152,6 +175,34 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+/*Edição do botão*/
+#Saiba-mais {
+    background-color: transparent; /* Fundo transparente */
+    color: #ffffff; /* Cor do texto (um cinza escuro, sem ser preto) */
+    border: 2px solid #333; /* Borda fina e discreta */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: 600; /* Levemente negrito */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    border-radius: 30px; /* Bordas arredondadas */
+    cursor: pointer; /* Mudança do cursor para mãozinha */
+    transition: all 0.3s ease; /* Suaviza a transição de efeitos */
+    outline: none; /* Remove a borda padrão de foco */
+}
+
+/* Efeito de hover */
+#Saiba-mais:hover {
+    color: #fff; /* Cor do texto para branco */
+    background-color: #333; /* Fundo escuro */
+    border-color: #333; /* Mantém a borda do botão escura */
+}
+
+/* Efeito ao clicar no botão */
+#Saiba-mais:active {
+    transform: scale(0.98); /* Um pequeno efeito de "clicado" */
+}
+
 
 .image-text {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -188,7 +239,7 @@ input[type="button"]:hover {
 .colum-text ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 2%;
     display: flex;
 }
 
@@ -205,8 +256,7 @@ input[type="button"]:hover {
     font-optical-sizing: auto;
     font-style: normal;
     width: 20rem;
-
-    margin: 0;
+    margin: 5%;
     text-align: justify;
 }
 
@@ -247,6 +297,32 @@ input[type="button"]:hover {
     font-size: 20px;
     width: 700px;
     margin: 2% auto;
+}
+
+
+.accessibility-controls {
+    position: fixed;
+    bottom: 20px; /* Distância do fundo da tela */
+    right: 20px; /* Distância da borda direita */
+    z-index: 1000; /* Garante que o controle fique sobre outros elementos */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    border-radius: 5px; /* Borda arredondada */
+    padding: 10px;
+}
+
+.accessibility-controls a {
+    display: block;
+    color: white;
+    text-decoration: none; /* Remove sublinhado */
+    padding: 5px;
+    margin: 5px 0; /* Espaçamento entre os links */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro */
+    border-radius: 5px;
+    text-align: center;
+}
+
+.accessibility-controls a:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro ao passar o mouse */
 }
 
 /*-------------------------------------------------------------------------------*/
