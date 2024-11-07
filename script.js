@@ -23,18 +23,19 @@ document.querySelector('.dropdown_gear li a').addEventListener('click', function
   // Variáveis para controlar o estado
 let fontSize = 1; // Tamanho da fonte padrão
 
-// Diminuir fonte
-document.querySelector('.decrease-font').addEventListener('click', function(e) {
-    e.preventDefault();
-    fontSize = Math.max(0.8, fontSize - 0.2); // Diminui o tamanho da fonte (não pode ficar menor que 0.8em)
-    document.body.style.fontSize = fontSize + 'em'; // Atualiza o tamanho da fonte
-});
 
-// Aumentar fonte
-document.querySelector('.increase-font').addEventListener('click', function(e) {
-    e.preventDefault();
-    fontSize += 0.2; // Aumenta o tamanho da fonte
-    document.body.style.fontSize = fontSize + 'em'; // Atualiza o tamanho da fonte
-});
 
-  
+
+function alterarTamanhoPagina() {
+    let body = document.body;
+    let currentSize = window.getComputedStyle(body, null).getPropertyValue('font-size');
+    let newSize = parseFloat(currentSize) * 1.1; // Aumenta a fonte em 10%
+    body.style.fontSize = newSize + 'px';
+}
+
+function diminuirTamanhoPagina() {
+    let body = document.body;
+    let currentSize = window.getComputedStyle(body, null).getPropertyValue('font-size');
+    let newSize = parseFloat(currentSize) * 0.9; // Diminui a fonte em 10%
+    body.style.fontSize = newSize + 'px';
+}
